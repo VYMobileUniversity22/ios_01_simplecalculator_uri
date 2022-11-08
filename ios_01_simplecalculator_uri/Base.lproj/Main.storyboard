@@ -39,6 +39,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Suma"/>
+                                <connections>
+                                    <action selector="btnActionSuma:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BxJ-GY-5dh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGS-9F-kUT">
                                 <rect key="frame" x="255" y="272" width="75" height="35"/>
@@ -47,6 +50,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Resta"/>
+                                <connections>
+                                    <action selector="btnActionResta:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ox-ns-TTk"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resultat: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGy-L9-Cy5">
                                 <rect key="frame" x="90" y="361" width="213" height="21"/>
@@ -77,8 +83,8 @@
                         <outlet property="btnResta" destination="QGS-9F-kUT" id="tZa-Ea-s8s"/>
                         <outlet property="btnSuma" destination="RNS-jo-4UX" id="gNY-Og-8cZ"/>
                         <outlet property="lblResultat" destination="gGy-L9-Cy5" id="2RD-9f-TZ5"/>
-                        <outlet property="tfNum1" destination="x9e-a1-OLU" id="ZIR-Gf-ULu"/>
-                        <outlet property="tfNum2" destination="x9e-a1-OLU" id="wX9-CQ-ev5"/>
+                        <outlet property="tfNum1" destination="nNu-6T-DDw" id="svf-Q0-Gf3"/>
+                        <outlet property="tfNum2" destination="x9e-a1-OLU" id="4PS-cO-ucf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
