@@ -14,8 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnSuma: UIButton!
     @IBOutlet weak var btnResta: UIButton!
     @IBOutlet weak var lblResultat: UILabel!
-    var num1:Int?
-    var num2:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,39 +21,27 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnActionSuma(_ sender: Any) {
-        if checkTextFields(){
-            let suma: Int = num1! + num2!
-            lblResultat.text = "Resultat: \(String(suma))"
-        }else{
-            lblResultat.text = "Campos incorrectos"
+//       print(checkTextFields(txtField: tfNum1))
+        if let num1 = checkTextFields(txtField: tfNum1),
+            let num2 = checkTextFields(txtField: tfNum2){
+            lblResultat.text = "Resultat: \(String(num1+num2))"
         }
     }
     
     @IBAction func btnActionResta(_ sender: Any) {
-        if checkTextFields(){
-            let resta: Int = num1! - num2!
-            lblResultat.text = "Resultat: \(String(resta))"
-        }else{
-            lblResultat.text = "Campos incorrectos"
+        if let num1 = checkTextFields(txtField: tfNum1),
+            let num2 = checkTextFields(txtField: tfNum2){
+            lblResultat.text = "Resultat: \(String(num1-num2))"
         }
     }
-    func checkTextFields () ->Bool{
-//        text = descriptionLabel.text where !text.isEmpty
-        guard let tf1 = tfNum1.text, !tf1.isEmpty,
-              let tf2 = tfNum2.text, !tf2.isEmpty,
-              let num1 = Int(tf1), num1 is Int,
-              let num2 = Int(tf2), num2 is Int
+    func checkTextFields (txtField : UITextField) ->Int?{
+        guard let tf1 = txtField.text, !tf1.isEmpty,
+              let num1 = Int(tf1)
         else{
-            return false
+            txtField.becomeFirstResponder()
+            return nil
         }
-        passValues()
-        return true
+        return num1
     }
-    //Asigning the values with a previus check
-    func passValues(){
-        num1 = Int(tfNum1.text!)
-        num2 = Int(tfNum2.text!)
-    }
-
 }
 
